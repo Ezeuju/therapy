@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    const new_cookie_names = {
+        ms_click_tracker: 'bh_mc_id',
+    };
+
+    function get_cookie(cookie_name) {
+        let name = cookie_name + "=";
+        let cookie_array = document.cookie.split(';');
+        for (let i = 0; i < cookie_array.length; i++) {
+            let c = cookie_array[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (new_cookie_names[cookie_name] && c.indexOf(new_cookie_names[cookie_name] + '=') === 0) {
+                return c.substring(new_cookie_names[cookie_name].length + 1, c.length);
+            } else if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return null;
+    }
+
+    function set_cookie(cookie_name, cookie_value, expire_seconds, additional_param_info='') {
+        let d = new Date();
+        d.setTime(d.getTime() + (expire_seconds * 1000));
+        let expires = "";
+        if (expire_seconds != false) {
+            expires = "expires=" + d.toUTCString();
+        }
+        if (new_cookie_names[cookie_name]) {
+            cookie_name = new_cookie_names[cookie_name];
+        }
+        if (additional_param_info.length && additional_param_info.charAt(0) !== ';') {
+            additional_param_info = ';' + additional_param_info;
+        }
+        document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/" + additional_param_info;
+    }
+</script>
+    <script>
+        var page_info = {"sites_fqdn":["www.pridecounseling.com","www.faithfulcounseling.com","www.mytherapist.com","www.teencounseling.com","www.betterhelp.com","www.betterhelporg.com","www.regain.us"],"redirect_sites_fqdn":["www.betterhelp.com","www.regain.us","www.faithfulcounseling.com","www.pridecounseling.com","www.teencounseling.com"],"redesigned_home":"betterhelp_two","account_recovery":false,"total_sessions":312886378,"total_therapists":32309,"total_members":4092632,"show_ukraine_support_modal":false,"app_version":"99e6c0c5667d","user_type":"logged_out_user","user_id":"2972cfb19263ff3b6b30eb42cd5c9212728169a705376c27927c3c562a4243fea21c3469ccbb9bdcb6e1eab0af52bcbb4397a905a02bc0539021ff8950ca9940","template":"main","is_mobile":false,"is_app":false,"is_ios_app":false,"is_android_app":false,"user_app_version":null,"is_local":false,"is_qa_server":false,"features":{"specify_podcast":true,"sunsetting":false,"urgent_messages":true,"couples":false,"phone_calls":true,"secret_assign_straights":true,"livechat":true,"about":true,"counselor_application":true,"counselor_application_lean":false,"worksheets":true,"smart_match_with_categories":true,"groupinars":true,"login_quotes":true,"videosessions":true,"app_supports_videosessions":true,"cloud_chat":true,"phq_followup":true,"consent_agreement":true,"gmail_quick_action":true,"scheduling":true,"support_link":true,"has_paypal_always":false,"no_trial":true,"strike_through_cake":true,"dollar_test_charge":true,"groupon":true,"mobgo":true,"mental":true,"funnel_smart_match":true,"funnel_overview":true,"offer_promo_codes":true,"email_verification_always":true,"reviews_page":true,"jobs_page":true,"security_logos_display":true,"social_links_display":true,"counselor-directory":true,"language_is_matching_hard_filter":false,"advice":true,"presskit":true,"press_page":true,"text_notifications":true,"goals":true,"goals_mobile_main_menu":false,"batch_creation":true,"ask_language":true,"parent_child_account":false,"hardcoded_testimonials":false,"friendly_funnel":true,"referral_program":true,"vouchers":true,"betterhelp_branded":true,"signup_captcha":true,"cookie_consent_required":true,"journal":true,"maintenance_plan":true,"show_business_link":true,"counselors_page":true},"date_time_formats":{"full":"F j, Y g:ia T","full_short_mo_no_tz":"M j, Y g:ia","date":"F j, Y","date_short_mo":"M j, Y","date_short_mo_int":"j M, Y","time":"g:ia","time_with_tz":"g:ia T","bh_date":"D, M j, Y \\a\\t g:ia T","bh_date_int":"D, j M, Y \\a\\t g:ia T","bh_date_full_day":"l, M j, Y \\a\\t g:ia T","bh_date_int_full_day":"l, j M, Y \\a\\t g:ia T"},"subdomain":"www","cdn_host_assets":"dy7glz37jgl0b.cloudfront.net","cdn_host":"static.betterhelp.com","assets_app_version":"?v=0177f73d2461","product_code_name":"betterhelp","product_name":"BetterHelp","unix_timestamp":1684758342,"use_trackjs":true,"trackjs_api_key":"8e343f2dd24f4a45bf5e416e9c3b37e4","trackjs_user":"","default_language_id":1,"csrf_token":"08387b668fdead8d569646e274bb9f1d74814bd892face92b1b96c19f5c1b79e6396565610563e338c95000c6b822404a950a34855b2c9510bc70810004d6008","presignup_experiments":{"PERSONALIZED_HOMEPAGE_COPY_V2":"CONTROL","BH_REACT_FUNNEL":"CONTROL","GROUPS_IN_QUIZ_V3":"Q_WITH_GROUP_ANS_WITH_GROUP","NO_REVIEWS_ON_DESKTOP_QUIZ":"CONTROL","REORDER_EXPERTISE_QUESTIONS":"CONTROL","NEW_HOMEPAGE_HEADER_V2":"CONTROL","NEW_TOLLHOUSE_COPY":"CONTROL","REDIRECT_COUNSELORS_PAGE":"CONTROL","STICKY_CTA_ADVICE_MOBILE":"TEST","FAQS_OPTIMIZATION_V2":"CONTROL","ASIAN_BLACK_THERAPIST_PREFERENCES":"TEST"},"counselor_presignup_experiments":{"THERAPIST_FAQ":"CONTROL","THERAPIST_LP_STICKY_CTA":"CONTROL"}}
+    </script>
+                            
+    <!-- META TAGS -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>BetterHelp | Professional Therapy With A Licensed Therapist</title>
+        <meta name="description" content="Get matched easily with a licensed, board-accredited therapist today. More than 32000 therapists with 312 million+ counseling sessions are ready to help you!">
+    <meta name="keywords" content="mental health" >
+    <meta name="title" content="BetterHelp | Professional Therapy With A Licensed Therapist">
+                    <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="BetterHelp | Professional Therapy With A Licensed Therapist" />
+                    <meta property="og:url"                content="http://www.betterhelp.com" />
+            <meta property="og:description"        content="BetterHelp offers private, affordable online counseling when you need it from licensed, board-accredited therapists. Get help, you deserve to be happy!" />
+            <meta property="og:image"              content="https://dy7glz37jgl0b.cloudfront.net/brand/betterhelp/betterhelp-fb.png?v=0177f73d2461" />
+            <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@betterhelp">
+    <meta name="twitter:title" content="BetterHelp | Professional Therapy With A Licensed Therapist">
+                    <meta name="twitter:description" content="BetterHelp offers private, affordable online counseling when you need it from licensed, board-accredited therapists. Get help, you deserve to be happy!">
+            <meta name="twitter:image" content="https://dy7glz37jgl0b.cloudfront.net/brand/betterhelp/betterhelp-fb.png?v=0177f73d2461">
+                <link rel="shortcut icon" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/favicon.ico" type="image/x-icon">
+    <!-- Apple Touch Icons for mobile safari -->
+    <link rel="apple-touch-icon" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/apple-touch-icon-120x120.png">
+    <!-- End Apple Touch Icons for mobile safari -->
+
+            
+    <link
+        rel="preload"
+        href="//static.betterhelp.com/dist/css/contrib/jquerymobile/1.4.5/jquery.mobile.min.css?v=99e6c0c5667d"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    >
+            <link
+        rel="preload"
+        href="//static.betterhelp.com/dist/css/contrib/font-awesome/css/all.min.css?v=99e6c0c5667d"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    >
+        <link rel="stylesheet" href="//static.betterhelp.com/dist/css/contrib/font-awesome-animation/0.0.7/css/font-awesome-animation.min.css?v=99e6c0c5667d">
+                
+            
+                
+            <link
+            rel="preload"
+            href="//static.betterhelp.com/dist/css/contrib/select2/select2.min.css?v=99e6c0c5667d"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        >
+    
+    <link rel="stylesheet" href="//static.betterhelp.com/dist/css/betterhelp_two/bh_style.css?v=99e6c0c5667d">
+    <link href="//static.betterhelp.com/dist/css/contrib/google/css/roboto/index.min.css?v=99e6c0c5667d" rel='stylesheet' type='text/css'>
+
+                        <link
+                rel="preload"
+                href="//static.betterhelp.com/dist/css/contrib/google/css/inter/index.min.css?v=99e6c0c5667d"
+                as="style"
+                onload="this.onload=null;this.rel='stylesheet'"
+            >
+            <link
+                rel="preload"
+                href="//static.betterhelp.com/dist/css/contrib/google/css/overpass/index.min.css?v=99e6c0c5667d"
+                as="style"
+                onload="this.onload=null;this.rel='stylesheet'"
+            >
+            
+    
+    <link rel="stylesheet" href="https://static.betterhelp.com/dist/css/slider/slick_new.css?v=99e6c0c5667d" >
+    <link rel="stylesheet" href="https://static.betterhelp.com/dist/css/slider/slick-theme.css?v=99e6c0c5667d" >
+    <link rel="stylesheet" href="https://static.betterhelp.com/dist/css/contrib/aos.css?v=99e6c0c5667d" >
+
+                <!-- Sweeps Tracking -->
+    <script> zarazData = {"dataLayerIgnore":["gtm.dom","gtm.load","gtm.js","gtm.triggerGroup","OptanonLoaded","OneTrustLoaded"],"z_product_code_name":"betterhelp","z_loadExtraScripts":"GTM-KP7H4QL","z_cookieConsent":0} ; </script>
+    <script src="https://z.betterhelp.com/cdn-cgi/zaraz/i.js"></script>
+    <!-- End Sweeps Tracking -->
+
+<script type="text/javascript" async>
+    try {
+        ;(function (p, l, o, w, i, n, g) {
+            if (!p[i]) {
+                p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || [];
+                p.GlobalSnowplowNamespace.push(i);
+                p[i] = function () {
+                    (p[i].q = p[i].q || []).push(arguments)
+                };
+                p[i].q = p[i].q || [];
+                n = l.createElement(o);
+                g = l.getElementsByTagName(o)[0];
+                n.async = 1;
+                n.src = w;
+                g.parentNode.insertBefore(n, g)
+            }
+        }(window, document, "script", "//static.betterhelp.com/js/contrib/sp/H9R1GshL.js?v=24", "snowplow"));
+
+        snowplow('newTracker', 'multisite', 'https://events.betterhelp.com', {
+            appId: '2',
+            discoverRootDomain: true,
+            cookieSameSite: 'Lax', // Recommended
+            contexts: {
+                webPage: true // default, can be omitted
+            }
+        });
+        var user_type = page_info.user_type;
+        if (user_type == 'logged_out_user') {
+            // in the PHP code, we send 'logged_out' to Snowplow
+            user_type = 'logged_out';
+        }
+        snowplow('addGlobalContexts', [{
+            schema: "iglu:com.betterhelp/user/jsonschema/1-0-0",
+            data: {
+                user_type: user_type,
+            }
+        }]);
+        if (page_info.user_id && Number.isInteger(page_info.user_id) && page_info.user_id > 0) {
+            snowplow('setUserId', page_info.user_id)
+        }
+        snowplow('enableActivityTracking', {
+            minimumVisitLength: 30,
+            heartbeatDelay: 10
+        });
+        snowplow('trackPageView');
+        var snowplow_global = null;
+        snowplow(function () {
+            snowplow_global = this.multisite;
+        });
+    }
+    catch (e) {
+        console.log(e);
+    }
+</script>
+    
+        
+    
+    <link rel="stylesheet" href="https://static.betterhelp.com/dist/css/contrib/odometer-theme-default.min.css?v=99e6c0c5667d">
+    <script type="application/ld+json">
+ { "@context": "http://schema.org",
+ "@type": "Organization",
+ "name": "BetterHelp",
+ "url": "https://www.betterhelp.com",
+ "logo": "https://dy7glz37jgl0b.cloudfront.net/brand/betterhelp/icon-color.png?v=0177f73d2461",
+ "foundingDate": "2013",
+ "founders": [
+ {
+ "@type": "Person",
+ "name": "Alon Matas"
+ },
+ {
+ "@type": "Person",
+ "name": "Danny Bragonier"
+ } ],
+"potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.betterhelp.com/advice_search/?search={search_term}",
+    "query-input": "required name=search_term" },
+ "address": {
+ "@type": "PostalAddress",
+ "streetAddress": "990 Villa Street",
+ "addressLocality": "Mountain View",
+ "addressRegion": "CA",
+ "postalCode": "94041",
+ "addressCountry": "USA"
+ },
+ "contactPoint": {
+ "@type": "ContactPoint",
+ "contactType": "customer support",
+ "email": "contact@betterhelp.com",
+ "url": "https://www.betterhelp.com/contact/"
+ },
+ "sameAs": [
+ "https://www.facebook.com/BetterHelp/",
+ "https://twitter.com/betterhelp",
+ "https://www.instagram.com/betterhelp/?hl=en",
+ "https://www.linkedin.com/company/betterhelp-com",
+ "https://www.pinterest.com/betterhelp/",
+ "https://plus.google.com/117263820920114720157",
+ "https://en.wikipedia.org/wiki/BetterHelp",
+ "https://www.youtube.com/c/BetterHelp" ]}
+</script>
+
+</head>
+
+<body id="main" class="" cdn="static.betterhelp.com">
+            <script>
+            function remove_url_parameter(url, parameter) {
+                //prefer to use l.search if you have a location/link object
+                var url_parts= url.split('?');
+                if (url_parts.length>=2) {
+                    var prefix= encodeURIComponent(parameter)+'=';
+                    var pars= url_parts[1].split(/[&;]/g);
+
+                    //reverse iteration as may be destructive
+                    for (var i= pars.length; i-- > 0;) {
+                        //idiom for string.startsWith
+                        if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+                            pars.splice(i, 1);
+                        }
+                    }
+
+                    url= url_parts[0] + (pars.length > 0 ? '?' + pars.join('&') : "");
+                    return url;
+                } else {
+                    return url;
+                }
+            }
+            try {
+                var clean_url = remove_url_parameter(window.location.href, 'email');
+                clean_url = remove_url_parameter(clean_url, 'e');
+                clean_url = remove_url_parameter(clean_url, 'pe');
+                clean_url = remove_url_parameter(clean_url, 'pn');
+                clean_url = remove_url_parameter(clean_url, 'organization_name');
+                window.history.replaceState('', '', clean_url);
+            }
+            catch (e) {}
+        </script>
+     <!-- end not automation and not amp -->
+        <div class="hidden overlay-loading-layer" id="loading_overlay">
+        <div class="loading-wrap">
+            <div class="loading-circle">
+                <i class="fa fa-circle-notch fa-spin fa-3x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        
+            <header data-scrolled="false" class=" dark-bg  is-logged-out">
+                <a href="#content-container" class="skip-link btn btn-primary">Skip to Main Content</a>
+    
+    
+    <!-- Branding -->
+            <a class=" brand-logo"   href="/" >
+            <div class="brand">
+                                                            <img layout="fixed" src="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/logo_reverse_medium.png?v=0177f73d2461" alt="BetterHelp home">
+                                                                </div>
+            <span aria-describedby="Please visit www.betterhelp.com/accessible to view the accessible version of our site."></span>
+        </a>
+            <a class="hidden-xs hidden-sm hidden-md hidden-lg brand-icon" href="/" ><div class="brand"><img src="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/icon-color-md.png?v=0177f73d2461" alt="BetterHelp home"></div></a>
+            <span aria-describedby="Please visit www.betterhelp.com/accessible to view the accessible version of our site."></span>
+            
+        <!-- Mobile menu button -->
+            <button
+            type="button"
+            class="mobilemenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-nav-menu"
+            data-expanded="false"
+        >
+            <span id="full-size-menu-highlight" class="hidden full-size-highlight"></span>
+                            <span aria-hidden="true" class="position-relative">
+                    <svg data-menu-open width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 16H24V13.3333H0V16ZM0 9.33333H24V6.66667H0V9.33333ZM0 0V2.66667H24V0H0Z" fill="currentColor"/>
+                    </svg>
+                    <svg data-menu-close width="18" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.6668 1.33337L1.3335 22.6667M1.3335 1.33337L22.6668 22.6667" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                </span>
+                        <span class="sr-only">Open menu</span>
+        </button>
+                    <div class="header-cta hide">
+            <a href="/get-started/" class="btn btn-primary" id="get-started-nav-scroll">Get Started</a>
+        </div>
+                <!-- Menu -->
+        <div id="mobile-nav-menu" class="menu " aria-label="Main Menu" role="navigation">
+
+            <!-- Left side menu - logged in users only -->
+                            <ul class="main">
+                                    </ul>
+                        <!-- Right side menu -->
+                            <ul class="right">
+                                                                                <a href="https://www.betterhelporg.com" ><li>Business</li></a>
+        <a href="/about/" id="about-nav" ><li>About</li></a>
+            <a href="/advice/" id="advice-nav" ><li>Advice</li></a>
+                            <a href="/faq/" id="faq-nav" ><li>FAQ</li></a>
+                <a href="/reviews/" id="reviews-nav" ><li>Reviews</li></a>
+        <a href="/counselor_application/" id="counselor-nav" ><li>Therapist Jobs</li></a>
+            <a href="/contact/" id="support-nav" ><li>Contact</li></a>
+                    <a href="/login/" class="btn btn-secondary ignore-dark-bg md:respect-dark-bg" id="login-nav">Login</a>
+                                <a href="/get-started/" class="btn btn-primary" id="get-started-nav">Get Started</a>
+                                                                </ul>
+                    </div>
+        
+                                </header>
+<div id="notification"></div>
+
+        
+        <div class="hidden dark-overlay"></div>            <div id="content-container" class="" role="main">
+                    <section class="hero-wrapper even-taller-mobile home-illus-cta-btn-hero-wrapper">
+        <div class="hero">
+            <div class="container">
+                <h1 class="heading-xl txt-ondark">You deserve to be happy.</h1>
+                <fieldset>
+                    <legend class="cta-question-legend" tabindex="0" data-question="What type of therapy are you looking for?">
+                        <div class="cta-question body-lg">What type of therapy are you looking for?</div>
+                    </legend>
+                    <div class="home-illus-button-group">
+                        <a id="btn-start-individual" class="home-illus-cta-btn individual" href="/get-started/?skip_redirect_question=1">
+                            <div class="home-illus-cta-btn-main-text">Individual </div><div class="home-illus-cta-btn-help-text">For myself
+                                <span class="arrow-outer">
+                                    <i class="arrow-inner fa fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <a id="btn-start-couples" class="home-illus-cta-btn couples" href="#">
+                            <div class="home-illus-cta-btn-main-text">Couples </div><div class="home-illus-cta-btn-help-text">For me and my partner
+                                <span class="arrow-outer">
+                                    <i class="arrow-inner fa fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <a id="btn-start-teen" class="home-illus-cta-btn teen" href="#">
+                            <div class="home-illus-cta-btn-main-text">Teen </div><div class="home-illus-cta-btn-help-text">For my child
+                                <span class="arrow-outer">
+                                    <i class="arrow-inner fa fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </fieldset>
+                            </div>
+            <div class="down-arrow" role="button" aria-label="scroll" tabindex="0">
+                <img data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/icons/chevron-down.svg?v=0177f73d2461" loading="eager" class="lozad down-arrow-img" alt="" />
+            </div>
+        </div>
+    </section>
+    <section id="home_numbers_section" class="numbers">
+        <div class="container" data-aos="fade-up">
+            <div class="numbers-container">
+                <h2 class="numbers-heading heading-xl">The world's largest therapy service.<br/><span class="txt-emphasis">100% online</span>.</h2>
+                <div class="counter-container">
+                    <div>
+                        <div class="counter-number" id="session_count">
+                            312886278
+                        </div>
+                        <div class="counter-label body-lg">
+                                                            Messages, chat, phone, video sessions
+                                                    </div>
+                    </div>
+                    <div>
+                        <div class="counter-number" id="therapist_count">
+                            32259
+                        </div>
+                        <div class="counter-label body-lg">
+                                                                                                Credentialled therapists ready to help
+                                                                                    </div>
+                    </div>
+                    <div>
+                        <div class="counter-number" id="member_count">
+                            4092622
+                        </div>
+                        <div class="counter-label body-lg">
+                                                            People got help
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="curved-top"></div>
+    <section class="counselor-feature">
+        <div class="container">
+            <h2 class="heading-xl">
+                                                            Professional and credentialled therapists who you can trust
+                                                </h2>
+            <div class="therapist-collage" aria-hidden="true">
+                <div class="left-column">
+                    <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/therapists/g.campos.jpg?v=0177f73d2461" alt="Therapist" />
+                    <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/therapists/a.argianas.jpeg?v=0177f73d2461" alt="Therapist" />
+                    <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/therapists/p.casthely.jpg?v=0177f73d2461" alt="Therapist" />
+                </div>
+                <div class="right-column">
+                    <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/therapists/k.bosin.jpeg?v=0177f73d2461" alt="Therapist" />
+                    <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/therapists/a.aguilar.jpeg?v=0177f73d2461" alt="Therapist" />
+                    <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/therapists/r.cheang.jpeg?v=0177f73d2461" alt="Therapist" />
+                </div>
+            </div>
+            <p>
+                                                            Tap into the world's largest network of credentialled, and experienced therapists who can help you with a range of issues including depression, anxiety, relationships, trauma, grief, and more. With our therapists, you get the same professionalism and quality you would expect from an in-office therapist, but with the ability to communicate when and how you want.
+                                                </p>
+            <div class="counselor-feature-cta">
+                                    <a class="btn btn-lg btn-primary" href="/get-started/">Get Matched to a Therapist</a>
+                
+            </div>
+        </div>
+    </section>
+    <section class="partners-temp"></section>
+    <section id="how_it_works" class="steps">
+        <div class="container">
+            <h2 class="steps-heading heading-xl center">How it works</h2>
+            <div class="step-container" data-aos="fade-up">
+                <img class="lozad how-it-works-image hidden-xs" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/image-how-it-works-1.png?v=0177f73d2461" alt="" />
+                <img class="lozad how-it-works-image hidden-sm hidden-md hidden-lg" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/image-how-it-works-1-phone.png?v=0177f73d2461" alt="" />
+                <div class="step-1">
+                    <h2 class="heading-lg">Get matched to the best therapist for you</h2>
+                    <p class="body-lg">
+                                                                                    Answer a few questions to find a credentialled therapist who fits your needs and preferences. Tap into the largest network of credentialled professionals.
+                                                                        </p>
+                </div>
+            </div>
+            <div class="arrow" data-aos="fade-up">
+                <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/icons/arrow-down-green-2.png?v=0177f73d2461" alt="" />
+            </div>
+            <div class="step-container" data-aos="fade-up">
+                <img class="lozad how-it-works-image hidden-xs" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/image-how-it-works-2.png?v=0177f73d2461" alt="" />
+                <img class="lozad how-it-works-image hidden-sm hidden-md hidden-lg" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/image-how-it-works-2-phone.png?v=0177f73d2461" alt="" />
+                <div class="step-2">
+                    <h2 class="heading-lg">Communicate your way</h2>
+                    <p class="body-lg">
+                                                    Talk to your therapist however you feel comfortable &mdash; text, chat, phone, or video.
+                                            </p>
+                </div>
+            </div>
+            <div class="arrow" data-aos="fade-up">
+                <img class="lozad" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/icons/arrow-down-green-2.png?v=0177f73d2461" alt="" />
+            </div>
+            <div class="step-container" data-aos="fade-up">
+                <img class="lozad how-it-works-image hidden-xs" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/image-how-it-works-3.png?v=0177f73d2461" alt="" />
+                <img class="lozad how-it-works-image hidden-sm hidden-md hidden-lg" data-src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/image-how-it-works-3-phone.png?v=0177f73d2461" alt="" />
+                <div class="step-3">
+                    <h2 class="heading-lg">
+                                                    Therapy when you need it
+                                            </h2>
+                    <p class="body-lg">
+                                                    You can message your therapist at anytime, from anywhere. You also get to schedule live sessions when it's convenient for you, and can connect from any mobile device or computer.
+                                            </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="comparison-table-wrap dark-bg">
+        <div class="container" data-aos="fade-up">
+            <div id="early_comparison_chart">
+                <div id="service-comparison-table" class="responsive-table">
+    <h2 class="text-center"><span class="txt-emphasis">Better</span>Help vs. traditional in-office therapy</h2>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th class="first-column"></th>
+            <th class="bh-logo-header"><div class="bh-logo">BetterHelp</div></th>
+            <th class="last-column"><h4>In-office</h4></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="table-comparison-text">
+                                    Provided by a credentialled therapist
+                    <span class="question-circle toggler-tooltip" id="toggler-tooltip-1" tabindex="0">
+                                                    <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="All therapists are credentialled with relevant experience and qualifications for their respective professional organizaitons"><i class="info-circle" aria-hidden="true"></i></a>
+                                            </span>
+                            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+        </tr>
+        <tr>
+            <td class="table-comparison-text">
+                In-office visits
+                <span class="question-circle toggler-tooltip" id="toggler-tooltip-2" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Commute to the therapist&#039;s location, spend time in the waiting room, sit in their office"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+        </tr>
+        <tr>
+            <td class="table-comparison-text">
+                                    Messaging any time
+                                <span class="question-circle toggler-tooltip" id="toggler-tooltip-3" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Send and receive messages to your therapist, no scheduling required!"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr>
+            <td class="table-comparison-text">
+                Chat sessions
+                <span class="question-circle toggler-tooltip" id="toggler-tooltip-4" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Real-time conversation over instant messaging"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr>
+            <td class="table-comparison-text">
+                Phone sessions
+                <span class="question-circle toggler-tooltip" id="toggler-tooltip-5" tabindex="0">
+                    <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Talk with your therapist over the phone at a scheduled time"><i class="info-circle" aria-hidden="true"></i></a>
+                </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr>
+            <td class="table-comparison-text">
+                Video sessions
+                <span class="question-circle toggler-tooltip" id="toggler-tooltip-6" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Face-to-face session with your therapist over video at a scheduled time"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr id="hidden_button_row" hidden>
+            <td colspan="3" class="text-center">
+                <a href="#hidden_button_row" id="reveal_hidden_rows">See more benefits... </a>
+            </td>
+        </tr>
+                <tr class="hidden-table-row">
+            <td class="table-comparison-text">
+                Easy scheduling
+                <span class="question-circle toggler-tooltip" id="toggler-tooltip-7" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Have a full look at your therapist&#039;s schedule and pick a time that works for you"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr class="hidden-table-row">
+            <td class="table-comparison-text">
+                                    Digital worksheets
+                                <span class="question-circle toggler-tooltip" id="toggler-tooltip-8" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="150+ digital worksheets and modules that support the therapy process"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr class="hidden-table-row">
+            <td class="table-comparison-text">
+                Group sessions
+                <span class="question-circle toggler-tooltip" id="toggler-tooltip-9" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Free access to 20+ weekly live interactive group seminars delivered by expert therapists"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon question-mark"><span class="feature-icon"><i class="fa fa-circle-question"></i> Unsure</span></td>
+        </tr>
+        <tr class="hidden-table-row">
+            <td class="table-comparison-text">
+                                    Smart provider matching
+                                <span class="question-circle toggler-tooltip" id="toggler-tooltip-10" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Get matched to a therapist from a pool of over 32,000 providers based on your needs, preferences, and demographics"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr class="hidden-table-row">
+            <td class="table-comparison-text">
+                                    Easy to switch providers
+                    <span class="question-circle toggler-tooltip" id="toggler-tooltip-11" tabindex="0">
+                        <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="If you&#039;re unhappy with your therapist, click a button and get matched to another provider"><i class="info-circle" aria-hidden="true"></i></a>
+                    </span>
+                            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+        <tr class="hidden-table-row">
+            <td class="table-comparison-text">
+                Access therapy from anywhere
+                <span class="question-circle toggler-tooltip" id="toggler-tooltip-12" tabindex="0">
+                                            <a href="javascript:void(0)" class="comparison_table_tooltip" data-text="Using a phone or computer you can reach out to your therapist anytime, from anywhere"><i class="info-circle" aria-hidden="true"></i></a>
+                                    </span>
+            </td>
+            <td class="table-comparison-icon feature-present"><span class="feature-icon">Yes</span></td>
+            <td class="table-comparison-icon feature-present-not"><span class="feature-icon">No</span></td>
+        </tr>
+                            <tr hidden>
+                <!-- Placeholder to remove the last-child style if the Cost section is hidden -->
+            </tr>
+                </tbody>
+
+            </table>
+
+
+    <p class="comparison-table-footnotes">
+            </p>
+</div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-in-quotes dark-bg" aria-label="hidden">
+        <div class="section testimonial-in-quotes body-section">
+    <div class="container">
+        <div class="testimonials">
+            <img data-src="//dy7glz37jgl0b.cloudfront.net/betterhelp_two/icons/quote-left.svg?v=0177f73d2461" class="lozad start-quote" alt="">
+            <div class="testimonial-slider" role="region" aria-label="Testimonials carousel">
+                                                <div class="slide" role="group" aria-label="slide 1 of 3">
+                    <div class="testimonial-text">
+                        <h2>I can actually see progress in my mental health which is something I haven&#039;t been able to say in 15 years and it&#039;s thanks to her.</h2>
+                        <table class="counselor margin-top-3">
+                            <td><img notranslate class="lozad user-icon" alt="Virginia Truglio" data-src="//dy7glz37jgl0b.cloudfront.net/funnel/counselor-avatars/virginia-truglio.jpg?v=0177f73d2461"></td>
+                            <td notranslate><p><span class="written-by">Member review for</span> Virginia Truglio <span class="credentials">(LCSW, MSW)</span></p></td>
+                        </table>
+                    </div>
+                </div>
+                                <div class="slide" role="group" aria-label="slide 2 of 3">
+                    <div class="testimonial-text">
+                        <h2>Michelle listens and provides excellent guidance through life&#039;s situations.</h2>
+                        <table class="counselor margin-top-3">
+                            <td><img notranslate class="lozad user-icon" alt="Michelle Wilkinson" data-src="//dy7glz37jgl0b.cloudfront.net/funnel/counselor-avatars/michelle-wilkinson.jpg?v=0177f73d2461"></td>
+                            <td notranslate><p><span class="written-by">Member review for</span> Michelle Wilkinson <span class="credentials">(MA, LPC-S)</span></p></td>
+                        </table>
+                    </div>
+                </div>
+                                <div class="slide" role="group" aria-label="slide 3 of 3">
+                    <div class="testimonial-text">
+                        <h2>Susan is amazing in her insights and conversational approach. I am so glad and blessed to have found her and started healing with her guidance.</h2>
+                        <table class="counselor margin-top-3">
+                            <td><img notranslate class="lozad user-icon" alt="Susan Hargett" data-src="//dy7glz37jgl0b.cloudfront.net/funnel/counselor-avatars/susan-hargett.jpg?v=0177f73d2461"></td>
+                            <td notranslate><p><span class="written-by">Member review for</span> Susan Hargett <span class="credentials">(LPC, NCC, YACEP)</span></p></td>
+                        </table>
+                    </div>
+                </div>
+                            </div>
+            <img data-src="//dy7glz37jgl0b.cloudfront.net/betterhelp_two/icons/quote-right.svg?v=0177f73d2461" class="lozad end-quote" alt="">
+        </div>
+        <div class="margin-top-3 padding-bottom-3 center">
+            <a class="btn btn-lg btn-secondary" href="/reviews/">More Success Stories</a>
+        </div>
+    </div>
+</div>
+
+    </section>
+    <div class="curved-top-2"></div>
+    <section id="home_faq_section" class="home-faq faq-right-collapse">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2 class="heading-xl center">Frequently asked questions</h2>
+                <div class="faq-container">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" id="faq_counselors" aria-expanded="false">
+                                        Who are the therapists?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                                                                                                        Therapists on BetterHelp are credentialled, trained, and experienced Practitioner Psychologists, Counsellors, or similar applicable recognized professional certification. Therapists must have a relevant academic degree in their field, at least 3 years of experience, and have to be qualified and credentialled by their respective professional organization after successfully completing the necessary education, exams, training, practice, and ongoing supervision requirements.
+                                                                                                            </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" id="faq_helping" aria-expanded="false">
+                                        Who will be helping me?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    After you sign up, we will match you to an available therapist who fits your objectives, preferences, and the type of issues you are dealing with. Different therapists have different approaches and areas of focus, so it's important to find the right person who can achieve the best results for you. We have found that we are able to provide a successful match most of the time; however, if you start the process and you feel your therapist isn't a good fit for you, you may elect to be matched to a different therapist.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" id="faq_is_bh_right" aria-expanded="false">
+                                        Is BetterHelp right for me?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    BetterHelp may be right for you if you're looking to improve the quality of your life. Whenever there is anything that interferes with your happiness or prevents you from achieving your goals, we may be able to help. We also have therapists who specialize in specific issues such as stress, anxiety, relationships, parenting, depression, addictions, eating, sleeping, trauma, anger, family conflicts, LGBT matters, grief, religion, self esteem, and more.<br/><br/>
+
+                                    BetterHelp is <strong>not</strong> the right solution for you if any of the following is true:
+                                    <ul>
+                                        <li>You are a minor or you are under the care of a legal guardian</li>
+                                        <li>You are in an urgent crisis or an emergency situation</li>
+                                        <li>You were required to undergo therapy either by a court order or by any other authority</li>
+                                        <li>You do not have a device that can connect to the Internet or you do not have a reliable Internet connection</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThreePoint5" id="faq_cost" aria-expanded="false">
+                                        How much does it cost?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseThreePoint5" class="panel-collapse collapse">
+                                <div class="panel-body" id="faq_cost_answer">
+                                                                            The cost of therapy through BetterHelp ranges from $60 to $90 per week (billed every 4 weeks) and it is based on your location, preferences, and therapist availability. You can cancel your membership at any time, for any reason.
+                                                                    </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" id="faq_how_long_until_matched" aria-expanded="false">
+                                        After I sign up, how long until I'm matched with a therapist?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    In most cases within 24 hours or less.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" id="faq_communicate" aria-expanded="false">
+                                        How will I communicate with my therapist?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    You can get therapy in four ways:
+                                    <ul>
+                                        <li><strong>Exchanging messages</strong> with your therapist</li>
+                                        <li><strong>Chatting live</strong> with your therapist</li>
+                                        <li><strong>Speaking over the phone</strong> with your therapist</li>
+                                        <li><strong>Video conferencing</strong> with your therapist</li>
+                                    </ul>
+
+                                    You can use different ways at different times as you wish, based on your needs, availability, and convenience. <a href="/online-counseling/">Learn more about online therapy.</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" id="faq_substitute" aria-expanded="false">
+                                        Can BetterHelp substitute for traditional face-to-face therapy?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    The professionals who work through BetterHelp are licensed and credentialed therapists who were certified by their state's board to provide therapy and counseling. However, while the service may have similar benefits, it's not capable of substituting for traditional face-to-face therapy in every case. Please note that your provider won't be able to make any official diagnosis, to fulfill any court order or prescribe medication.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" id="faq_how_long_use_bh" aria-expanded="false">
+                                        How long can I use BetterHelp?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseSeven" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    This depends on your needs and varies a lot from one person to another. Some people feel they get most of the value after just a few weeks, while others prefer to stick to the program for an extended period of time. This is completely up to you.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title" role="heading" aria-level="3">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" id="faq_study" aria-expanded="false">
+                                        How can I be sure that this is an effective form of therapy?
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="collapseEight" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    There are many studies that confirm the effectiveness of the online medium for making life changes. For example, a study published by JMIR Publications and conducted by researchers from University of California - Berkeley, University of California - San Francisco, and the San Francisco General Hospital concluded that "users of BetterHelp experienced significantly reduced depression symptom severity after engaging with the platform." You can read the full study <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6364202/" target="_blank">here</a>.<br/><br/>
+                                    Our confidence in the platform comes primarily from the <a href="/reviews/" target="_blank">feedback and testimonials</a> we receive from users. Every day, we are excited to hear from more people about the way this service helped them make a tremendous change in their lives.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-cta center">
+                        <a class="faq-link" href="/faq/">More frequently asked questions</a>
+                        <a class="btn btn-lg btn-primary" href="/get-started/">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="home-gift">
+        <div class="container">
+            <div class="home-gift-container" data-aos="fade-up">
+                <h2 class="heading-xl"><span class="txt-emphasis">Give the gift</span> of a BetterHelp membership</h2>
+                <div class="gift-img"><img class="lozad" src="https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/photos/gift-give.jpg?v=0177f73d2461" /></div>
+                <div class="gift-detail">Therapy is one of the most meaningful gifts you can give to your friends and loved ones. </div>
+                <div class="gift-button"><a class="btn btn-lg btn-secondary js-track-gift-home" href="/gift/">Gift a Membership</a></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        if (typeof snowplow !== "undefined") {
+            snowplow("trackStructEvent", {
+                category: "homepage",
+                action: "viewed"
+            });
+        }
+    </script>
+
+            </div>
+
+            
+                        <div id="modal-timeout" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <div class="h2-style">Your session is about to expire!</div>
+                                <p>You will be logged out in <span id="dialog-countdown" style="font-weight:bold"></span> seconds.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" id="modal-timeout-resume">Keep me active</button>
+                <button class="btn btn-dismiss" id="modal-timeout-logout">Log out</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="csrf_token" value="08387b668fdead8d569646e274bb9f1d74814bd892face92b1b96c19f5c1b79e6396565610563e338c95000c6b822404a950a34855b2c9510bc70810004d6008">
+</div>
+    
+<footer class="">
+    <div id="upperbar">
+        <div class="container">
+            <div class="row">
+                <div id="footer_get_help" class="col-md-6  text-left">
+                                                                        If you are in a crisis or any other person may be in danger - don't use this site. <a href="/gethelpnow/">These resources</a> can provide you with immediate help.
+                                                            </div>
+                <div class="col-md-6 right">
+                                                                <a href="https://www.ssllabs.com/ssltest/analyze.html?d=www.betterhelp.com/" target="_blank"><img class="lozad" data-src="//dy7glz37jgl0b.cloudfront.net/home/ssl-secure-bw-logo.png?v=0177f73d2461" alt="256-bit SSL Secure Logo"></a>
+                                    </div>
+            </div>
+        </div>
+            </div>
+    <div id="lowerbar">
+        <div class="container" >
+                            <ul class="upper">
+                                        <a href="/" id="footer-home"><li>Home</li></a>
+                                        <a href="https://www.betterhelporg.com"><li>Business</li></a>
+                                                            <a href="/about/"><li>About</li></a>
+                                                            <a href="/faq/"><li>FAQ</li></a>
+                                                            <a href="/reviews/" id="footer-reviews"><li>Reviews</li></a>
+                                                                <a href="/advice/"><li>Advice</li></a>
+                                                            <a href="/careers/" id="footer-jobs"><li>Careers</li></a>
+                                                                <a href="/therapists/"><li>Find a Therapist</li></a>
+                                                            <a href="/online-therapy/"><li>Online Therapy</li></a>
+                                        <a href="/contact/"><li>Contact</li></a>
+                                                                <a href="/counselor_application/"><li>For Therapists</li></a>
+                                                                                <div class="social-icons right">
+                        <a class="social-icons" href="https://www.facebook.com/BetterHelp" target="_blank" aria-label="Betterhelp page on Facebook"><li class="social facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></li></a>
+                        <a class="social-icons" href="https://www.linkedin.com/company/betterhelp-com" target="_blank" aria-label="Betterhelp page on Linkedin"><li class="social linkedin"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></li></a>
+                        <a class="social-icons" href="https://www.pinterest.com/betterhelp/" target="_blank" aria-label="Betterhelp page on Pinterest"><li class="social pinterest"><i class="fa-brands fa-pinterest-p" aria-hidden="true"></i></li></a>
+                        <a class="social-icons" href="https://twitter.com/betterhelp" target="_blank" aria-label="Betterhelp page on Twitter"><li class="social twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></li></a>
+                    </div>
+                                    </ul>
+                        <ul class="lower">
+                                                <a href="/terms/"><li>Terms &amp; Conditions</li></a>
+                <a href="/privacy/"><li>Privacy Policy</li></a>
+                                    <a href="javascript:void(0)" onclick="show_cookie_settings_modal();"><li>Sharing Settings</li></a>
+                                <a href="/third-party/"><li>Third Parties</li></a>
+                <a href="/accessibility/"><li>Web Accessibility</li></a>
+                <li>&copy; 2023 BetterHelp</li>
+                            </ul>
+        </div>
+    </div>
+</footer>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45 45" style="display: none; enable-background:new 0 0 45 45;" xml:space="preserve">
+    <symbol id="svg-groups" viewBox="0 0 45 45">
+        <path fill="currentColor" d="M19.3,23.4l-3,5c-0.1,0.2-0.3,0.3-0.5,0.3h0h0c-0.1,0-0.2,0-0.3-0.1c-0.3-0.1-0.4-0.4-0.3-0.7l3-5
+            c0.2-0.3,0.5-0.4,0.8-0.2c0.1,0.1,0.3,0.2,0.3,0.3C19.4,23.2,19.4,23.3,19.3,23.4z M29.7,28l-3-5c-0.2-0.3-0.5-0.4-0.8-0.2
+            c-0.1,0.1-0.2,0.2-0.3,0.3c0,0.1,0,0.3,0,0.4l3,5c0.1,0.2,0.3,0.3,0.5,0.3c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1,0l0,0
+            C29.8,28.6,29.9,28.3,29.7,28z M27.3,33.4h-9.5c-0.3,0-0.5,0.3-0.5,0.6c0,0.3,0.2,0.5,0.5,0.6h9.5h0c0.3,0,0.5-0.3,0.5-0.6
+            C27.9,33.6,27.6,33.4,27.3,33.4z"/>
+        <path d="M22.2,6.4c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7c-1.5,0-2.7-1.2-2.7-2.7S20.7,6.4,22.2,6.4z M24.8,12
+            c1.5,2.1,2.4,4.6,2.6,7.2c0.1,0.5-0.2,1-0.7,1.1c0,0-0.1,0-0.1,0H18c-0.5,0-0.8-0.4-0.8-0.9c0,0,0-0.1,0-0.1c0.2-2.6,1-5.1,2.4-7.3
+            C19.6,12,22.3,14.6,24.8,12z M34.3,24.8c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7c-1.5,0-2.7-1.2-2.7-2.7S32.8,24.8,34.3,24.8z
+             M36.9,30.4c1.5,2.1,2.4,4.6,2.6,7.2c0.1,0.5-0.2,1-0.7,1.1c0,0-0.1,0-0.1,0h-8.7c-0.5,0-0.8-0.4-0.8-0.9c0,0,0-0.1,0-0.1
+            c0.2-2.6,1-5.1,2.4-7.3C31.7,30.4,34.4,33,36.9,30.4z M10.3,24.8c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7
+            S8.8,24.8,10.3,24.8z M12.9,30.4c1.5,2.1,2.4,4.6,2.6,7.2c0.1,0.5-0.2,1-0.7,1.1c0,0-0.1,0-0.1,0H6.1c-0.5,0-0.8-0.4-0.8-0.9
+            c0,0,0-0.1,0-0.1c0.2-2.6,1-5.1,2.4-7.3C7.7,30.4,10.4,33,12.9,30.4z"/>
+        <path fill="currentColor" d="M34.3,30.5c-1.7,0-3-1.4-3-3s1.4-3,3-3s3,1.4,3,3S35.9,30.5,34.3,30.5z M34.3,26.1c-0.7,0-1.4,0.6-1.4,1.4
+            s0.6,1.4,1.4,1.4s1.4-0.6,1.4-1.4S35,26.1,34.3,26.1z M30.4,39.2c-0.8,0-1.5-0.7-1.5-1.5c0-0.1,0-0.2,0-0.3c0.2-2.2,1-4.4,2.3-6.2
+            c0.3-0.4,0.8-0.5,1.2-0.2c0.4,0.3,0.5,0.8,0.2,1.2c-1.1,1.6-1.8,3.5-2,5.4h7.5c0,0,0,0,0-0.1c0-1.9-0.7-3.8-1.9-5.3
+            C36,31.8,36,31.3,36.4,31c0.4-0.3,0.9-0.2,1.2,0.1c1.4,1.8,2.2,4.1,2.2,6.3c0,1-0.7,1.8-1.5,1.8L30.4,39.2
+            C30.5,39.2,30.5,39.2,30.4,39.2z M30.5,37.5C30.5,37.5,30.5,37.5,30.5,37.5L30.5,37.5C30.5,37.5,30.5,37.5,30.5,37.5z M10.3,30.4
+            c-1.7,0-3.1-1.4-3.1-3s1.4-3,3.1-3s3.1,1.4,3.1,3S12,30.4,10.3,30.4z M10.3,26C9.6,26,9,26.7,9,27.4s0.6,1.3,1.4,1.3
+            s1.4-0.6,1.4-1.3S11.1,26,10.3,26z M15.9,37.4c0-2.3-0.8-4.6-2.3-6.4c-0.3-0.4-0.8-0.4-1.2-0.1c-0.4,0.3-0.4,0.8-0.1,1.2
+            c1.2,1.5,1.9,3.4,1.9,5.3c0,0,0,0,0,0.1H6.7c0.2-1.9,0.9-3.8,2-5.4c0.3-0.4,0.2-0.9-0.2-1.2c-0.4-0.3-0.9-0.2-1.2,0.2
+            C6,32.9,5.2,35.1,5,37.3c0,0,0,0.2,0,0.2c0,0.9,0.7,1.6,1.6,1.6h7.8C15.3,39.1,15.9,38.4,15.9,37.4z M22.2,12.1
+            c-1.7,0-3.1-1.4-3.1-3.1S20.6,6,22.2,6c1.7,0,3,1.4,3,3.1S23.9,12.1,22.2,12.1z M22.2,7.7c-0.7,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4
+            c0.7,0,1.4-0.6,1.4-1.4S23,7.7,22.2,7.7z M27.8,19c0-2.3-0.8-4.6-2.3-6.4c-0.3-0.4-0.8-0.4-1.2-0.1c-0.4,0.3-0.4,0.8-0.1,1.2
+            c1.2,1.5,1.9,3.4,1.9,5.3c0,0,0,0,0,0h-7.5c0.2-1.9,0.9-3.8,2-5.4c0.3-0.4,0.2-0.9-0.2-1.2c-0.4-0.3-0.9-0.2-1.2,0.2
+            c-1.3,1.9-2.1,4.1-2.3,6.3c0,0,0,0.1,0,0.2c0,0.4,0.2,0.8,0.5,1.1c0.3,0.3,0.7,0.5,1.1,0.5h7.8C27.2,20.8,27.8,20,27.8,19z"/>
+    </symbol>
+</svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="groupinars-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 61 42" style="display: none; enable-background:new 0 0 45.4 45.4;" xml:space="preserve">
+    <symbol id="svg-groupinars" viewBox="0 0 61 42">
+        <path fill="currentColor" d="M30.5,2.5c4.3,0,8,3.7,8,8c0,4.4-3.6,8-8,8s-8-3.6-8-8S26.1,2.5,30.5,2.5 M51.5,8.5c1.9,0,3.5,1.6,3.5,3.5
+			c0,2-1.5,3.5-3.5,3.5c-2,0-3.5-1.5-3.5-3.5C48,10,49.5,8.5,51.5,8.5 M9.5,8.5c1.9,0,3.5,1.6,3.5,3.5c0,2-1.5,3.5-3.5,3.5
+			C7.5,15.5,6,14,6,12C6,10,7.5,8.5,9.5,8.5 M54.5,23.5c1.9,0,3.5,1.6,3.5,3.5v3c0,0.3-0.3,0.5-0.5,0.5h-4.2c-0.8-2.7-2.1-5.1-4-7
+			H54.5 M11.6,23.5c-1.9,1.9-3.3,4.3-4,7H3.5C3.2,30.5,3,30.3,3,30v-3c0-2,1.5-3.5,3.5-3.5H11.6 M37.6,26.5c4.6,0,8.4,3.8,8.4,8.4
+			v2.6c0,1.1-0.9,2-2,2H17c-1.2,0-2-0.8-2-2v-2.6c0-4.6,3.7-8.4,8.3-8.4h0.2c2.3,1,4.6,1.5,7,1.5c2.3,0,4.7-0.5,6.9-1.5H37.6
+			 M30.5,0C24.7,0,20,4.8,20,10.5C20,16.3,24.7,21,30.5,21C36.2,21,41,16.3,41,10.5C41,4.8,36.2,0,30.5,0L30.5,0z M51.5,6
+			c-3.4,0-6,2.7-6,6c0,3.4,2.6,6,6,6c3.3,0,6-2.6,6-6C57.5,8.7,54.8,6,51.5,6L51.5,6z M9.5,6c-3.4,0-6,2.7-6,6c0,3.4,2.6,6,6,6
+			c3.3,0,6-2.6,6-6C15.5,8.7,12.8,6,9.5,6L9.5,6z M54.5,21h-6c-1.7,0-3.2,0.8-4.3,1.8c3.8,2.1,6.5,5.8,7.1,10.2h6.2c1.6,0,3-1.3,3-3
+			v-3C60.5,23.7,57.8,21,54.5,21L54.5,21z M12.5,21h-6c-3.4,0-6,2.7-6,6v3c0,1.7,1.3,3,3,3h6.1c0.7-4.4,3.3-8.2,7.1-10.2
+			C15.6,21.8,14.1,21,12.5,21L12.5,21z M37.6,24h-0.8c-2,0.9-4.1,1.5-6.4,1.5c-2.3,0-4.5-0.6-6.5-1.5h-0.8c-6,0-10.8,4.9-10.8,10.9
+			v2.6c0,2.5,2,4.5,4.5,4.5h27c2.4,0,4.5-2,4.5-4.5v-2.6C48.5,28.9,43.6,24,37.6,24L37.6,24z" />
+    </symbol>
+</svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="groupinars-svg-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 61 42" style="display: none; enable-background:new 0 0 45.4 45.4;" xml:space="preserve">
+    <symbol id="svg-groupinars-active" viewBox="0 0 61 42">
+        <path fill="currentColor" d="M9.5 18C12.7812 18 15.5 15.375 15.5 12C15.5 8.71875 12.7812 6 9.5 6C6.125 6 3.5 8.71875 3.5 12C3.5 15.375 6.125 18 9.5 18ZM51.5 18C54.7812 18 57.5 15.375 57.5 12C57.5 8.71875 54.7812 6 51.5 6C48.125 6 45.5 8.71875 45.5 12C45.5 15.375 48.125 18 51.5 18ZM54.5 21H48.5C46.8125 21 45.3125 21.75 44.1875 22.7812C48.0312 24.8438 50.6562 28.5938 51.3125 33H57.5C59.0938 33 60.5 31.6875 60.5 30V27C60.5 23.7188 57.7812 21 54.5 21ZM30.5 21C36.2188 21 41 16.3125 41 10.5C41 4.78125 36.2188 0 30.5 0C24.6875 0 20 4.78125 20 10.5C20 16.3125 24.6875 21 30.5 21ZM37.625 24H36.875C34.9062 24.9375 32.75 25.5 30.5 25.5C28.1562 25.5 26 24.9375 24.0312 24H23.2812C17.2812 24 12.5 28.875 12.5 34.875V37.5C12.5 40.0312 14.4688 42 17 42H44C46.4375 42 48.5 40.0312 48.5 37.5V34.875C48.5 28.875 43.625 24 37.625 24ZM16.7188 22.7812C15.5938 21.75 14.0938 21 12.5 21H6.5C3.125 21 0.5 23.7188 0.5 27V30C0.5 31.6875 1.8125 33 3.5 33H9.59375C10.25 28.5938 12.875 24.8438 16.7188 22.7812Z"/>
+    </symbol>
+</svg>
+
+            
+        
+                                <!-- BEGIN TRACKJS -->
+<script src="//static.betterhelp.com/js/contrib/trackjs/v3/t.js?v=24" ></script>
+<script>
+    window.TrackJS && TrackJS.install({
+        token: "8e343f2dd24f4a45bf5e416e9c3b37e4",
+        userId: '',
+        console: { display: false },
+        application: 'ogjs'
+    });
+</script>
+<!-- END TRACKJS -->
+            
+            <script type="text/javascript" src="//static.betterhelp.com/js/contrib/lozad.min.js?v=24"></script>
+<script>
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+</script>
+
+            <script src="//static.betterhelp.com/js/contrib/jquery/2.2.2/jquery.min.js?v=24" ></script>
+
+                            <script src="//static.betterhelp.com/js/contrib/select2/select2.full.min.js?v=24" ></script>
+            
+                        <script src="//static.betterhelp.com/js/contrib/bootstrap/3.3.6/js/bootstrap.min.js?v=24" ></script>
+            <script>jQuery.fn.bootstrap_tooltip = jQuery.fn.tooltip;</script> 
+            <script src="//static.betterhelp.com/dist/js/everywhere.js?v=99e6c0c5667d"></script>
+            <script src="//static.betterhelp.com/dist/js/events.js?v=99e6c0c5667d"></script>
+            
+                        
+            
+                            <script>
+                    // Fix for android app trying to use sockets on pause/resume events without checking whether sockets are available on the given page
+                    var socket = {
+                        on: function() {
+                            return false;
+                        },
+                        disconnect: function () {
+                            return false;
+                        },
+                        emit: function () {
+                            return false;
+                        }
+                    };
+
+                    var reconnectSocket = function() {
+                        return false;
+                    }
+                </script>
+            
+                        <script src="//static.betterhelp.com/js/contrib/jstz.min.js?v=24"></script>
+            <script src="//static.betterhelp.com/dist/js/loggedout.js?v=99e6c0c5667d"></script>
+
+            
+            
+            <script src="//static.betterhelp.com/js/contrib/popper.min.js?v=24"></script>
+            <script src="//static.betterhelp.com/js/contrib/tippy-bundle.umd.min.js?v=24"></script>
+
+        
+    <script src="https://static.betterhelp.com/js/contrib/slider/slick_new.min.js?v=24" ></script>
+    <script src="https://static.betterhelp.com/dist/js/funnel.js?v=99e6c0c5667d"></script>
+    <script src="https://static.betterhelp.com/js/contrib/aos.js?v=24"></script>
+    <script src="https://static.betterhelp.com/js/contrib/odometer.min.js?v=24"></script>
+    <script src="//static.betterhelp.com/dist/js/social_proof_counter.js?v=99e6c0c5667d"></script>
+    <script src="https://static.betterhelp.com/dist/js/betterhelp/main.js?v=99e6c0c5667d"></script>
+    <script src="https://static.betterhelp.com/dist/js/gift.js?v=99e6c0c5667d"></script>
+    
+    <script>
+        $(document).ready(function() {
+            let searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has('link_expired')) {
+                $('#modal-link-expired').modal('show');
+            }
+            if (page_info.product_code_name === 'betterhelp') {
+                var counseling_type = null;
+                var question_name = 'What type of therapy are you looking for?';
+                $('.home-illus-button-group a').click(function() {
+                    counseling_type = $(this).text().trim();
+                    if (counseling_type.toLowerCase().indexOf("individual") > -1
+                        && typeof BhEvents !== undefined) {
+                        CounselingSelectedEvent("individual").send();
+                    }
+                });
+                $('div[id^=refer_to]').on('shown.bs.modal', function () {
+                    if (typeof snowplow !== "undefined") {
+                        snowplow("trackStructEvent", {
+                            category: "onboarding_redirect_modal",
+                            action: "shown",
+                            context: [
+                                {
+                                    schema: "iglu:com.betterhelp/onboarding-redirect-modal/jsonschema/1-0-0",
+                                    data: {
+                                        triggering_question_name: question_name,
+                                        triggering_question_number: 0,
+                                        modal_passable: "yes",
+                                        proposed_domain: counseling_type
+                                    }
+                                }
+                            ]
+                        });
+                    }
+                });
+                $('.redirect-button').on('click', function() {
+                    var modal_response = $(this).text();
+                    if (typeof snowplow !== "undefined") {
+                        snowplow("trackStructEvent", {
+                            category: "onboarding_redirect_modal",
+                            action: "answered",
+                            context: [
+                                {
+                                    schema: "iglu:com.betterhelp/onboarding-redirect-modal/jsonschema/1-0-0",
+                                    data: {
+                                        triggering_question_name: question_name,
+                                        triggering_question_number: 0,
+                                        modal_passable: 'yes',
+                                        proposed_domain: counseling_type,
+                                        modal_response: modal_response
+                                    }
+                                }
+                            ]
+                        });
+                        var counseling_type = '';
+                        if (modal_response.toLowerCase().indexOf("teen") > -1) {
+                            counseling_type = "teen";
+                        } else if (modal_response.toLowerCase().indexOf("couple") > -1) {
+                            counseling_type = "couples";
+                        }
+                        if (typeof BhEvents !== undefined) {
+                            CounselingSelectedEvent(counseling_type).send();
+                        }
+                    }
+                });
+                $('button[id^="dont-redirect"]').on('click', function() {
+                    var modal_response = $(this).text();
+                    if (typeof snowplow !== "undefined") {
+                        snowplow("trackStructEvent", {
+                            category: "onboarding_redirect_modal",
+                            action: "answered",
+                            context: [
+                                {
+                                    schema: "iglu:com.betterhelp/onboarding-redirect-modal/jsonschema/1-0-0",
+                                    data: {
+                                        triggering_question_name: question_name,
+                                        triggering_question_number: 0,
+                                        modal_passable: 'yes',
+                                        proposed_domain: counseling_type,
+                                        modal_response: modal_response
+                                    }
+                                }
+                            ]
+                        });
+                        if (typeof BhEvents !== undefined) {
+                            CounselingSelectedEvent("individual").send();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+            
+            
+                                        
+
+<div id="modal-cookie-settings" class="modal fade" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modal-cookie-settings-title">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                                    <h2 id="modal-cookie-settings-title" class="modal-cookie-settings-title">Your Privacy</h2>
+                                <button
+                    id="modal-cookie-settings-close"
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="close"
+                >&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cookie-settings-geo-specific-copy">
+                                                                                            <p>We have the ability to use our own and third-party cookies and web beacons to help the site function properly, analyze usage, and support marketing. To learn more, please visit our <a href="/privacy/" rel="noopener noreferrer" target="_blank">Privacy Policy</a>. To opt in to these uses, please update your settings here and click 'Confirm my choices'.</p>
+                                                            </div>
+                <div>
+                    <button type="button" id="cookie-settings-allow-all" class="btn btn-primary" data-dismiss="modal">Allow All</button>
+                </div>
+                <h2 class="modal-cookie-settings-title">Manage consent preferences</h2>
+                                    <div>
+                        <details class="cookie-settings-details" style="border-bottom-width: 0.5px; border-radius: 5px 5px 0 0" aria-expanded="false">
+                            <summary class="cookie-settings-summary" role="button">
+                                <div class="cookie-settings-always-active-container">
+                                    <span>Necessary Cookies</span>
+                                    <span class="cookie-settings-always-active">Always Active</span>
+                                </div>
+                                    <div aria-hidden="true" class="cookie-settings-summary-icon-container">
+        <i class="fa fa-angle-right"></i>
+    </div>
+
+                            </summary>
+                            <div class="cookie-settings-details-content">
+                                These cookies are ones we consider necessary for the website to function and operate, regulate and monitor user experience, assess attribution internally, control data ingress, comply with laws and your indicated preferences, and provide security. For these reasons, necessary cookies will always be active.
+                            </div>
+                        </details>
+                        <div class="cookie-settings-togglable-container">
+                            <details class="cookie-settings-details" style="border-bottom-width: 0.5px; border-top-width: 0.5px;" aria-expanded="false">
+                                <summary class="cookie-settings-summary" role="button">
+                                    <span>Targeting Cookies</span>
+                                        <div aria-hidden="true" class="cookie-settings-summary-icon-container">
+        <i class="fa fa-angle-right"></i>
+    </div>
+
+                                </summary>
+                                <div class="cookie-settings-details-content">
+                                    These cookies are for personal advertising and measurement of advertising effectiveness. They may be set by us or our advertising partners. They may also be used by those companies to build a profile of your interests and show you relevant advertisements on other sites. If you opt in to targeting cookies, data such as your IP address, third party identifier, device type and browser type may be shared with our advertising partners. If you opt out of targeting cookies, you may experience less personalized advertising.
+                                </div>
+                            </details>
+                            <div class="macro-toggle">
+    <input
+        id="cookie-settings-toggle-targeting"
+        aria-label="Toggle targeting cookies"
+        type="checkbox"
+        class="macro-toggle-input"
+        checked    />
+    <div class="macro-toggle-container">
+    <div class="macro-toggle-switch"></div>
+    </div>
+</div>
+
+                        </div>
+                        <div class="cookie-settings-togglable-container">
+                            <details class="cookie-settings-details" style="border-top-width: 0.5px; border-radius: 0 0 5px 5px" aria-expanded="false">
+                                <summary class="cookie-settings-summary" role="button">
+                                    <span>Performance Cookies</span>
+                                        <div aria-hidden="true" class="cookie-settings-summary-icon-container">
+        <i class="fa fa-angle-right"></i>
+    </div>
+
+                                </summary>
+                                <div class="cookie-settings-details-content">
+                                    These cookies allow us, through our third parties, to process data related to traffic sources, visits, and site interactions to optimize our product and service.
+                                </div>
+                            </details>
+                            <div class="macro-toggle">
+    <input
+        id="cookie-settings-toggle-performance"
+        aria-label="Toggle performance cookies"
+        type="checkbox"
+        class="macro-toggle-input"
+        checked    />
+    <div class="macro-toggle-container">
+    <div class="macro-toggle-switch"></div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cookie-settings-confirm" class="btn btn-primary" data-dismiss="modal">Confirm my choices</button>
+            </div>
+        </div>
+    </div>
+</div>
+            
+        
+    <div class="modal fade" id="modal-link-expired" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modal-link-expired-header">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 id="modal-link-expired-header">Link Expired</h2>
+            </div>
+            <div class="modal-body">
+                <p class="mb-15 mt-0">
+                    We're sorry, the link you're trying to use has expired.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dismiss" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+            <div id="refer_to_regain" class="modal fade" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="heading_text_transfer_couples">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="refer_text">
+                <div class="modal-body">
+                    <div class="h2-style">
+                        <span id="heading_text_transfer_couples">Would you like to be transferred to Regain.us (operated by BetterHelp), where you can get couples therapy for you and your partner?</span>
+                        <div class="sr-only">Please use the escape key to dismiss this modal dialog</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="dont-redirect" class="btn btn-dismiss" data-dismiss="modal" type="submit" role="application" aria-label="Continue with BetterHelp (individual therapy) button">Continue with BetterHelp <span class="helper-text">(individual therapy)</span></button>
+                                            <a id="redirect-to-site" rel="nofollow" href="https://www.regain.us/get-started/?couples_counseling=from_betterhelp
+" class="btn btn-primary redirect-button" type="submit">Go to Regain.us <span class="helper-text">(couples therapy)</span></a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div id="refer_to_teen" class="modal fade" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="heading_text_transfer_teen">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="refer_text">
+                <div class="modal-body">
+                    <div class="h2-style">
+                        <span id="heading_text_transfer_teen">Would you like to be transferred to TeenCounseling.com (operated by BetterHelp), where you can get therapy for your child?</span>
+                        <div class="sr-only">Please use the escape key to dismiss this modal dialog</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="dont-redirect-parent-to-teen" class="btn btn-dismiss" data-dismiss="modal" type="submit" role="application" aria-label="Continue with BetterHelp (individual therapy) button">Continue with BetterHelp <span class="helper-text">(individual therapy)</span></button>
+                                            <a id="redirect-parent-to-teen" rel="nofollow" href="https://www.teencounseling.com/parent_start/?teen_counseling=from_betterhelp
+" class="btn btn-primary redirect-button" type="submit">Go to TeenCounseling.com <span class="helper-text">(therapy for your child)</span></a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="redirect_to_teen" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-modal="true" aria-label="Transfer to TeenCounseling">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="refer_text">
+                                    <div class="modal-body">
+                        <div class="h2-style">
+                            You are being transferred to our sister site <a id="redirect-teen-to-teen" rel="nofollow" href="https://www.teencounseling.com/teen_interested/?teen_counseling=from_betterhelp">TeenCounseling.com</a>, which serves clients aged 13 to 19.
+                            <div class="sr-only">Please use the tab key to go to TeenCounseling</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                                                    <a id="redirect-teen-to-teen" rel="nofollow" href="https://www.teencounseling.com/teen_interested/?teen_counseling=from_betterhelp" class="btn btn-primary redirect-button" type="submit">Go to TeenCounseling.com</a>
+                                            </div>
+                            </div>
+        </div>
+    </div>
+</div>
+            <div id="modal-account_recovery_sent" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Your account recovery request has been sent</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your request has been successfully sent to our support team. They will respond as quickly as possible, which may take up to 1 business day.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dismiss close_modal" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>        
+    </div>
+    <script>
+        function addFormNonces() {
+            var forms = document.querySelectorAll('form');
+            for (var i = 0; i < forms.length; i++) {
+                addFormNonce(forms[i]);
+            }
+        }
+
+        function addFormNonce(form) {
+            // Nonce unique per user per form with random identifier
+            var nonce = page_info.user_type + ":" + page_info.user_id + ":" + form.getAttribute('id') + ":" + Date.now(),
+                nonce_el = form.querySelector('[name=nonce]');
+
+            if (nonce_el) {
+                nonce_el.value = nonce;
+            } else {
+                nonce_el = document.createElement('input');
+                nonce_el.type = 'hidden';
+                nonce_el.name = 'nonce';
+                nonce_el.value = nonce;
+                form.appendChild(nonce_el);
+            }
+        }
+
+        addFormNonces();
+    </script>
+
+            
+
+
+
+        </body>
+</html>
+
