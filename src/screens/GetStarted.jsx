@@ -8,7 +8,7 @@ const GetStarted = () => {
     <div>
       <nav className="flex justify-between m-auto w-11/12 items-center h-20 navflex ">
 {/* <div className="w-1/5 "> */}
-<a href="/Testhome" class="flex items-center">
+<a href="/" class="flex items-center">
       <img src={tranquilmindss} class="h-10 mr-3" alt="Tranquil Logo"/>
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tranquil</span>
   </a>
@@ -19,7 +19,7 @@ const GetStarted = () => {
     <a href="/reports" class="font-bold px-3 py-3  rounded-lg hover:bg-slate-100 hover:text-slate-900 text-[#2d4b75]">Contact Us</a>
     <a href="/reports" class="font-bold px-3 py-3  rounded-lg hover:bg-slate-100 hover:text-slate-900 text-[#2d4b75] border border-sky-500">Login</a> */}
     {/* <a href="/reports" class="font-bold px-10 py-3  rounded-full bg-[#2d4b75] hover:text-slate-900 hover:bg-slate-100 text-[#fff] ml-20">Get Started</a> */}
-    <a href="/GetStarted" class="font-bold logbold px-3 py-3 w-1/5 text-center rounded-lg hover:bg-slate-100 hover:text-slate-900 text-[#2d4b75] border border-sky-500">Login</a>
+    <a href="/LogIn" class="font-bold logbold px-3 py-3 w-1/5 text-center rounded-lg hover:bg-slate-100 hover:text-slate-900 text-[#2d4b75] border border-sky-500">Login</a>
   
 </nav>
 <h1 className='w-full flex justify-center text-3xl boldtext'>Wait!, Just before you create an account</h1>

@@ -10,7 +10,7 @@ const navbar = () => {
     <div>
    <nav class="bg-white   w-full  top-0 left-0">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
-  <a href="/Testhome" class="flex items-center">
+  <a href="/" class="flex items-center">
       <img src={tranquilmindss} class="h-10 mr-3" alt="Tranquil Logo"/>
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tranquil</span>
   </a>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import logos from  '../assets/logos.png';
 import counselling from '../assets/counselling.jpg'
 import faceOne from '../assets/faceOne.jpeg'
@@ -16,10 +16,11 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { MdFacebook } from "react-icons/md";
 import { MdWhatsapp } from "react-icons/md";
-import simcha from '../assets/simcha.png';
-import sim from '../assets/sim.png';
-import { Collapse } from 'flowbite';
+// import simcha from '../assets/simcha.png';
+// import sim from '../assets/sim.png';
+// import { Collapse } from 'flowbite';
 import tranquilmindss from '../assets/tranquilmindss.jpg'
+// import { useNavigate } from 'react-router-dom';
 // import { Navbar } from `flowbite-react`;
 
 
@@ -32,6 +33,8 @@ import Carousal from '../components/Carousal'
 
 
 const testHome = () => {
+
+
   
 
   return (
@@ -39,7 +42,7 @@ const testHome = () => {
         
 <nav class="bg-white   w-full  top-0 left-0">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
-  <a href="/Testhome" class="flex items-center">
+  <a href="/" class="flex items-center">
       <img src={tranquilmindss} class="h-10 mr-3" alt="Tranquil Logo"/>
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tranquil</span>
   </a>
@@ -108,8 +111,8 @@ Professional and credentialled therapists who you can trust</h2>
   <div className='flex w-4/5  m-auto justify-between mt-16 items-center mobile-flex sm:w-full'>
   <img src={howOne} alt="" className='w-3/5 draw' />
   <div className='headtext'>
-    <h2 className='font-sans text-3xl  text-[#694b94] straight'>Get matched to the best <br/>therapist for you</h2>
-    <p className='font-sans text-xl  text-[#694b94] para'>Answer a few questions to find a credentialled<br/> therapist who fits your needs and preferences.<br/> Tap into the largest network of credentialled<br/> professionals.</p>
+    <h2 className='font-sans text-3xl w-3/4 text-[#694b94] straight'>Get matched to the best therapist for you.</h2>
+    <p className='font-sans text-xl w-3/4 text-[#694b94]'>Answer a few questions to find a credentialled<br/> therapist who fits your needs and preferences.<br/> Tap into the largest network of credentialled<br/> professionals.</p>
   </div>
   </div>
   <div className='flex w-4/5 justify-center m-auto pt-20 pb-20 arrow'><FaArrowDown className='text-6xl text-[#694b94] arr'/></div>
@@ -117,7 +120,7 @@ Professional and credentialled therapists who you can trust</h2>
   <img src={howTwo} alt="" className='w-3/5 draw'/>
   <div className=' headtext'>
     <h2 className='font-sans text-3xl txt text-[#694b94] straight'>Communicate your way</h2>
-    <p className='font-sans text-xl txt text-[#694b94]'>Talk to your therapist however you feel comfortable — text, chat, phone, or video.</p>
+    <p className='font-sans text-xl txt text-[#694b94]'>Talk to your therapist however you feel comfortable text, chat, phone, or video.</p>
   </div>
   </div>
   <div className='flex w-4/5 justify-center m-auto pt-20 pb-20 arrow'><FaArrowDown className='text-6xl text-[#694b94] arr'/></div>
@@ -137,7 +140,7 @@ Professional and credentialled therapists who you can trust</h2>
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-              <a href="/Testhome" className="flex items-center">
+              <a href="/" className="flex items-center">
                   {/* <img src={tranquilmindss} class="h-8 mr-3" alt="Logo" /> */}
                   <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tranquil</span>
               </a>
