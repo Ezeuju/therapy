@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "register": [
+    {
+      "email": "chrisdanielwise@gmail.com",
+      "phone": "02345678",
+      "password": "2345678",
+      "comfirmPassword": "1q2345678",
+      "terms": true,
+      "id": 1
+    },
+    {
+      "email": "chrisdanielwise@gmail.com",
+      "password": "wedfghj",
+      "reference": true,
+      "remember": "on",
+      "id": 2
+    },
+    {
+      "email": "chrisdanielwise@gmail.com",
+      "password": "wedfghj",
+      "reference": true,
+      "remember": "on",
+      "id": 3
+    },
+    {
+      "email": "chrisdanielwise1@gmail.com",
+      "password": "wedfghj",
+      "reference": true,
+      "remember": "on",
+      "id": 4
+    },
+    {
+      "email": "chrisdanielwis@gmail.com",
+      "password": "wedfghj",
+      "reference": true,
+      "remember": "on",
+      "id": 5
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   return (
@@ -148,11 +149,11 @@ const ContactUs = () => {
               class="block p-2.5 mb-4 w-2/5 formy text-sm text-gray-900 bg-violet-300 rounded-lg border   focus:outline-none focus:ring focus:border-blue-500  "
               placeholder="Write your thoughts here..."
             ></textarea>
-           <a href='./LoginTwo'><input
+           <Link to='/LoginTwo'><input
               type="submit"
               value="Submit"
               className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
-            /></a>
+            /></Link>
           </form>
         </div>
         <div className="flex items-center justify-between w-2/6 mt-10 contact">
