@@ -38,7 +38,7 @@ const LogIn = () => {
       alert('Please enter a valid email address');
       return;
     }
-      fetch("http://localhost:8000/register", {
+      fetch("https://therapy.onrender.com/users/login", {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json', // set the content type to application/json

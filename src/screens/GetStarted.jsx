@@ -30,7 +30,7 @@ const onRegistration = (e) =>{
   // e.preventDefault()
   // if(completeData){
     // console.log(inputs)
-    fetch("http://localhost:8000/register",{
+    fetch("https://therapy.onrender.com/users/register",{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
